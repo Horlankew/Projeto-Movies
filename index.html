@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5310e33888.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Movies</title>
+</head>
+<body>
+    <header>
+        <div class="header-1">
+            <h1>Meus Filmes Favoritos</h1>
+            <i class="fa-solid fa-heart fa-beat heart" style="--fa-beat-scale: 2.0;"></i>
+        </div>  
+            <i class="fas fa-bookmark favoritos"></i>
+        <!-- <i class="fas fa-play"></i>-->
+        
+    </header>
+    <main class="main">
+        <pre id="debug"></pre>
+        <section class="container">
+            <div class="inputs">
+                <!-- form com inputs dos dados dos filmes -->
+                <form id="form" class="forms">
+                    <div class="titulo container">
+                        <!-- input com titulo do filme -->
+                        <label for="titulo">Titulo :</label>
+                        <input onkeyup="atualizarDados()" class="js-movie-titulo" autofocus type="text" name="titulo" id="titulo" placeholder="Digite o titulo do Filme">
+                    </div>
+                    <div class="imagem">
+                        <!-- input com link da imagem do filme -->
+                        <label for="imagem">Imagem :</label>
+                        <input onkeyup="atualizarDados()" class="js-movie-imagem" type="url" name="imagem" id="imagem" placeholder="Adicione a ulr da imagem do Filme">                      
+                    </div>
+                    <div class="genero">
+                        <!-- input com genero dos filmes -->
+                        <label for="genero">Gênero :</label>
+                        <input onkeyup="atualizarDados()" class="js-movie-genero" type="text" name="genero" id="genero" placeholder="Digite o Gênero do Filme">
+                    </div>
+                    <div class="nota">
+                        <!-- input com nota dos filmes -->
+                        <label for="nota">Nota :</label>
+                        <input onkeyup="atualizarDados()" class="js-movie-nota" type="number" name="nota" id="nota" placeholder="Nota de 0 a 10" min="0" max="10" width="100%">
+
+                    </div>
+                    <div class="button">
+                        <!-- botão que envia o form com os dados do filme cadastrado pelo usuario -->
+                        <button type="submit" onclick="cadastrar ()" class="btn">Cadastrar Filme</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+        <!-- section com os cards dos filmes --> 
+        <section id="MOVIES" class="cards">
+            <div class="meus-filmes-favoritos">
+                <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1; --fa-flash-scale: 1.25;" ></i>
+                <img src="panico.jpg" class="mobile" alt="capa Pânico 4">
+                <h3>Pânico 4</h3>
+                <h4>Terror/Mistério</h4>
+                <h1>10</h1>
+            </div>
+            <div class="meus-filmes-favoritos">
+                <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1; --fa-flash-scale: 1.25;" ></i>
+                <img src="rugrats.jpg" class="mobile" alt="capa Os anjinhos">
+                <h3>Os Anjinhos em Paris</h3>
+                <h4>Infantil/Animação</h4>
+                <h1 class="notas">10</h1>               
+            </div>
+            <div class="meus-filmes-favoritos imgs">
+                <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1; --fa-flash-scale: 1.25;" ></i>
+                <img src="branquelas.jpg" class="mobile" alt="capa As Branquelas">
+                <h3>As Branquelas</h3>
+                <h4>Comédia/Crime</h4>
+                <h1 class="notas">10</h1>
+            </div>
+            <div class="meus-filmes-favoritos imgs">
+                <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1; --fa-flash-scale: 1.25;" ></i>
+                <img src="madagascar.webp" class="mobile" alt="capa Madagascar 3">
+                <h3>Madagascar 3</h3>
+                <h4>Infantil/Comédia</h4>
+                <h1 class="notas">10</h1>
+            </div>
+            
+        </section>    
+        <section id="addMovies"></section>
+    </main>
+    <footer>
+        <div class="redes-1">
+            <a href=""><i class="fa fa-instagram redes" ></i></a> 
+            <a href=""><i class="fa-brands fa-facebook-square redes" ></i></a>           
+            <a href=""><i class="fa-brands fa-whatsapp-square redes"></i></a>
+            <a href=""><i class="fa-brands fa-github redes"></i></a>
+        
+        </div>
+        <p> Desenvolvedor em treinamento Front-End   - Horlan Kelwyn -2021</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
