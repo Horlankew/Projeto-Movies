@@ -26,10 +26,12 @@ const atualizarDados = () =>{
 // inserindo os valores dos inputs dentro da var movie, atribuindo class e data-id para a 'div' a ser criada
 // que vai formar o elemento com o card do movie, e inserindo ele no html c template literals
 const montaItem = () => {
-    const movie = document.createElement('div')
-    movie.setAttribute('data-id', movies.id)
-    movie.setAttribute('class','cards')
-    movie.insertAdjacentHTML('beforeEnd',
+    const addmovie = document.createElement('div')
+    addmovie.setAttribute('data-id', movies.id)
+    addmovie.setAttribute('class','cards')
+    const movieExist = document.querySelector(`[data-id='${addmovie.id}']`)
+    
+    addmovie.insertAdjacentHTML('beforeEnd',
     `   
         <img src="${movies.imagem}" class="mobile" alt="imagem do filme"></img>
         <div class="div-infos">
@@ -37,30 +39,43 @@ const montaItem = () => {
             <h4>${movies.genero}</h4>
             <h1>${movies.nota}</h1>   
         </div>
-        <button class="delete-movie" data-id="${movies.id}">
-            <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1; --fa-flash-scale: 1.25;" ></i>
+        <button class="delete-movie" data-id="${movies.id}" onClick="Delete(${movies.id})">
+            <i class="fa-solid fa-trash excluir fa-flash" style="--fa-flash-opacity: 0.1;" ></i>
         </button> 
 
     `)
-    
-return movie
 
+    return addmovie
 }
+
 // função q adc um movie individual dentro do elemento addMovies
 const cadastrar = () =>{
     document.getElementById('addMovies').appendChild(montaItem())
     movies = {}
-    imagem.value = ''
-    titulo.value = ''
-    genero.value = ''
-    nota.value = ''
+    imagem.value = '',
+    titulo.value = '',
+    genero.value = '',
+    nota.value = '',
     id.value = ''
 }
 
+const Delete = (id) =>{
+    const deleted = document.querySelector(`[data-id='${id}']`)
+    deleted.remove();
+}
 
 
-// addMovies.push(movies)
-// console.log(addMovies);
+// metodo antigo de delete que eu tava testando 
+// const Delete = (id) =>{
+//     const index = movies.findIndex(movies => movies.id === id)
+//     movies.splice(index, 1)
+        
+
+//     console.log('achei',movies)
+// }
+
+
+
 
 
 

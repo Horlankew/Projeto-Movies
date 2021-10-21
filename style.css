@@ -121,6 +121,8 @@ body{
 
 }
 .btn-cadastrar:hover{
+    width: 8rem;
+    height: 3rem;
     opacity: 1;
     transition: all 1s;
     transform:scale(1.1);
@@ -138,22 +140,24 @@ body{
 
 } */
 .delete-movie{
+    margin-right: 20%;
+    margin-top: 10px;
     border:none;
     outline:none;
     background: transparent;
     cursor: pointer;
-    margin-right: 25px;
-    position:absolute;
+    position: absolute;
 }
-
 .excluir{
     font-size: 1.5rem;
-    color: rgb(214, 4, 4);
+    color: #fff;
     z-index: 10;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 .excluir:hover{
     font-size: 2rem;
+    color: rgb(255, 0, 0);
+    background-color:rgb(228, 253, 0);
 }
 .MOVIES{    
     width:80%;
@@ -162,6 +166,8 @@ body{
     align-items: center;
     justify-content:space-around;
     flex-wrap: wrap;
+    padding-bottom: 7px;
+
 }
 .cards{
     display: flex;
@@ -170,12 +176,10 @@ body{
     height: auto;
     align-items: center;
     padding: 5px;
-    /* justify-content:flex-start; */
-    /* margin:15px 15px; */
+    margin:15px 15px;
     color: rgba(34,249,237,1);
     border-radius: 10px;
     background-color:rgba(126,1,247,1);
-    /* background-color: rgba(7,27,252,1); */
 
 }
 
@@ -228,7 +232,6 @@ body{
     width:100%;
     padding:10px;
     
-    
 }
 
 .inputs div{
@@ -236,7 +239,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center
+    justify-content:center;
 }
 .inputs label{
     font-size: 1.5rem;
