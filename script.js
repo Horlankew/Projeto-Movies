@@ -6,7 +6,9 @@ let movies = {
     genero: '',
     nota: 0,
     id:0
-};
+    
+}
+
 // ouvindo o evento submit c addEventListener e com o preventDefault "descartando o f5 q o submit dá na pg qd envia"
 // definindo uma var form para receber os valores do form do HTML c getElementById
 let form = document.getElementById('form')
@@ -24,7 +26,8 @@ const atualizarDados = () =>{
         id: new Date().getTime()
     };
     
-
+    MovieList.push(movies)
+    console.log('obj-vazio-pq',MovieList);
 }
 // inserindo os valores dos inputs dentro da var movie, atribuindo class e data-id para a 'div' a ser criada
 // que vai formar o elemento com o card do movie, e inserindo ele no html c template literals
@@ -48,21 +51,20 @@ const montaItem = () => {
         </button> 
 
     `)
-
     return ItemMovie
 }
-MovieList.push(movies)
+
+console.log('test',MovieList);
 // função q adc um movie individual dentro do elemento addMovies
 const cadastrar = () =>{
     document.getElementById('addMovies').appendChild(montaItem())
-    movies = {}
+    // movies = {}
     imagem.value = '',
     titulo.value = '',
     genero.value = '',
-    nota.value = '',
-    id.value = ''
+    nota.value = ''
 }
-console.log('minha lista',MovieList)
+// console.log('minha lista',MovieList)
 const Delete = (id) =>{
     const deleted = document.querySelector(`[data-id='${id}']`)
     deleted.remove();
@@ -71,17 +73,19 @@ const Delete = (id) =>{
 }
 
 const addToStorage = () => {
-    localStorage.setItem('ListMovies',JSON.stringify(movies))
+    localStorage.setItem('ListMovies', JSON.stringify(MovieList))
 }
 
 
 const renderListMovieStorage = () => {
 
     const movieStorage = localStorage.getItem('ListMovies')
-    if(movieStorage){
+    console.log('obj',movieStorage);
+    if(movieStorage > 0){
         MovieList = JSON.parse(movieStorage)
-        MovieList.map((movies,index) =>{
-            montaItem(movies)
+        console.log('obj c valores', MovieList);
+        MovieList.map((movie) =>{
+            montaItem(movie)
         })
     }
 }
